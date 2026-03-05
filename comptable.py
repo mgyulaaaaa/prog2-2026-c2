@@ -11,7 +11,7 @@ limit = 60 * 60 * 3
 if __name__ == "__main__":
 
     recs = []
-    for f in Path("runs").iterdir():
+    for f in Path("runs/run-logs").iterdir():
         try:
             tss, sol = re.findall(r"([\d|\.]+)-(.*)", f.name)[0]
         except IndexError:
