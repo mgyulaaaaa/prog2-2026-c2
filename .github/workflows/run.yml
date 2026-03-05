@@ -2,30 +2,29 @@ name: Run Solutions
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *'
   push:
     branches:
-      - benchmark
+      - main
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 
 jobs:
   test:
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
+    - uses: astral-sh/setup-uv@v5
     - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      run: uv sync
     - name: Run solutions
-      run: |
-        make run-all
+      run: make run-all
     - name: Create Comparison Table
-      run: |
-        make comp-table
+      run: make comp-table
     - name: Commit results
       run: |
-        git config --global user.email "leo@dumbartonserum.com";git config --global user.name "Leo Dumbarton"
+        git config --global user.email "leo@dumbartonserum.com"
+        git config --global user.name "Leo Dumbarton"
         git add runs && git commit -m "update results" && git push
