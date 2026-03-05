@@ -4,28 +4,28 @@
 
 | solution   |   setup |   preproc |   compute |
 |:-----------|--------:|----------:|----------:|
-| baboon     |    0.97 |      0.23 |     23.28 |
+| baboon     |    1.04 |      0.25 |     35.39 |
 
 ## Inputs: 5000, Queries 50
 
 | solution   |   setup |   preproc |   compute |
 |:-----------|--------:|----------:|----------:|
-| baboon     |    0.95 |      0.21 |     30.12 |
+| baboon     |    1.04 |      0.28 |     47.79 |
 
 ## Inputs: 10000, Queries 100
 
 | solution   |   setup |   preproc |   compute |
 |:-----------|--------:|----------:|----------:|
-| baboon     |    0.81 |       0.2 |     38.91 |
+| baboon     |    1.03 |      0.27 |      63.8 |
 
 ## Inputs: 10000, Queries 1000
 
 | solution   |   setup |   preproc |   compute |
 |:-----------|--------:|----------:|----------:|
-| baboon     |    0.99 |       0.2 |    162.39 |
+| baboon     |    1.08 |      0.28 |    272.02 |
 
 ## Inputs: 10000, Queries 100000
 
 | solution   |   setup |   preproc |   compute |
 |:-----------|--------:|----------:|----------:|
-| baboon     |    0.95 |      0.22 |   13552.9 |
+| baboon     |    1.04 |      0.27 |   23105.1 |
